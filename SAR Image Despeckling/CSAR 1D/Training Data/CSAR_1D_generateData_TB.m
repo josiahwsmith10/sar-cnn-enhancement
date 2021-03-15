@@ -56,7 +56,7 @@ clear indSample
 numSample = 2;
 numTargetMax = 25;
 
-iParams.displayRandResult = true;
+iParams.displayRandResult = false;
 
 tic
 f0 = fParams.f0 + fParams.ADCStartTime*fParams.K; % This is for ADC sampling offset
@@ -163,10 +163,10 @@ toc
 
 %% Generate Training Data GPU (MOST EFFICIENT)
 
-numSample = 2;
-numTargetMax = 25;
+numSample = 1000;
+numTargetMax = 200;
 
-iParams.displayRandResult = true;
+iParams.displayRandResult = false;
 
 tic
 f0 = fParams.f0 + fParams.ADCStartTime*fParams.K; % This is for ADC sampling offset
@@ -177,7 +177,7 @@ k = 2*pi*f/c;
 k = gpuArray(single(reshape(k,1,[])));
 clear f f0
 theta_rad = ( (-iParams.nAngMeasurement/2):( (iParams.nAngMeasurement/2) - 1) )*iParams.tStepM_deg*pi/180;
-theta_rad = gpuArray(single(reshape(theta_rad,[],1));
+theta_rad = gpuArray(single(reshape(theta_rad,[],1)));
 
 [X,Z] = ndgrid(p.xT,p.zT);
 
@@ -213,14 +213,14 @@ indX = xRangeT_m >= (p.xT(1)) & xRangeT_m <= (p.xT(end));
 indZ = zRangeT_m >= (p.zT(1)) & zRangeT_m <= (p.zT(end));
 
 % Input and Output
-Input = gpuArray(single(zeros(p.xLim,p.zLim,numSample));
-Output = gpuArray(single(zeros(p.xLim,p.zLim,numSample));
+Input = gpuArray(single(zeros(p.xLim,p.zLim,numSample)));
+Output = gpuArray(single(zeros(p.xLim,p.zLim,numSample)));
 
 for indSample = 1:numSample
     numTarget = randi(numTargetMax,1);
     
     % Input and Output
-    csarData = gpuArray(single(complex(zeros(iParams.nAngMeasurement, fParams.adcSample)));
+    csarData = gpuArray(single(complex(zeros(iParams.nAngMeasurement, fParams.adcSample))));
     
     % Target Scene
     coord_x_m = p.xT(1) + (p.xT(end)-p.xT(1))*rand(numTarget,1);
@@ -273,4 +273,4 @@ toc
 
 %% Save the Training Data
 
-save("./Training Data/trainingSet","pxz","csarImage","numTargetMax","numSample")
+save("./Training Data/trainingSet","Input","Output","numTargetMax","numSample")
