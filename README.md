@@ -9,7 +9,9 @@ An early project for using CNN models to enhance radar images. Work from this pr
 - Improved Static Hand Gesture Classification on Deep Convolutional Neural Networks using Novel Sterile Training Technique ([arXiv](https://arxiv.org/abs/2305.02039), [DOI](https://doi.org/10.1109/ACCESS.2021.3051454))
 
 ## Later version
-- The second version of this project can be found at [improved-sar-cnn-enhancement-v2](https://github.com/josiahwsmith10/improved-sar-cnn-enhancement-v2)
+- The beta second version (V2) of this project can be found at [improved-sar-cnn-enhancement](https://github.com/josiahwsmith10/improved-sar-cnn-enhancement)
+- The official second version (V2.1) of this project can be found at [improved-sar-cnn-enhancement-v2](https://github.com/josiahwsmith10/improved-sar-cnn-enhancement-v2)
+
 
 # Publication and Citation
 If you appreciate our work, please cite one of the papers based on this work
