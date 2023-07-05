@@ -21,7 +21,7 @@ If you appreciate our work, please cite one of the papers based on this work
 - An FCNN-Based Super-Resolution mmWave Radar Framework for Contactless Musical Instrument Interface ([arXiv](https://arxiv.org/abs/2305.01995), [DOI](https://doi.org/10.1109/TMM.2021.3079695))
 - Improved Static Hand Gesture Classification on Deep Convolutional Neural Networks using Novel Sterile Training Technique ([arXiv](https://arxiv.org/abs/2305.02039), [DOI](https://doi.org/10.1109/ACCESS.2021.3051454))
 ```
-@article{smith2023dual_radar,
+@article{smith2023deep,
 	title        = {Deep Learning-Based Multiband Signal Fusion for 3-D SAR Super-Resolution},
 	author       = {Smith, J. W. and Torlak, M.},
 	year         = 2023,
